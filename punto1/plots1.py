@@ -21,7 +21,7 @@ def W(desvs):
     rta = desvs**2
     return rta.sum() / len(desvs)
 
-procesos = 4
+procesos = 8
 
 promedios = np.zeros((procesos,1000))
 desv = np.zeros((procesos,1000))
