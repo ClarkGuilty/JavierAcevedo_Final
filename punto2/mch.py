@@ -16,12 +16,12 @@ xreal = datos[:,1]
 yreal = datos[:,2]
 zreal = datos[:,3]
 
-#plt.plot(treal,xreal,label = 'x')
-#plt.plot(treal,yreal,label = 'y')
-#plt.plot(treal,zreal,label = 'z')
-#plt.legend()
-#plt.xlabel("tiempo")
-#plt.ylabel("x y z")
+plt.plot(treal,xreal,label = 'x')
+plt.plot(treal,yreal,label = 'y')
+plt.plot(treal,zreal,label = 'z')
+plt.legend()
+plt.xlabel("tiempo")
+plt.ylabel("x y z")
 
 t = np.linspace(0, 3,300)
 dt = t[1]-t[0]
@@ -128,13 +128,25 @@ for i in range(len(fit[0])):
 
 
 
-#plt.figure()
-#plt.plot(t,nx,label = 'x')
-#plt.plot(t,ny,label = 'y')
-#plt.plot(t,nz,label = 'z')
-#plt.legend()
-#plt.xlabel("tiempo")
-#plt.ylabel("x y z")
+plt.plot(treal,zreal,label = 'z')
+plt.legend()
+plt.xlabel("tiempo")
+plt.ylabel("x y z")
+
+nx,ny,nz = solveDiff(fit[0],fit[1],fit[2])
+
+plt.figure()
+plt.plot(t,nx,label = 'x')
+plt.plot(treal,xreal,label = 'x datos')
+plt.legend()
+plt.figure()
+plt.plot(t,ny,label = 'y')
+plt.plot(treal,yreal,label = 'y datos')
+plt.legend()
+plt.figure()
+plt.plot(t,nz,label = 'z')
+plt.plot(treal,zreal,label = 'z datos')
+plt.legend()
     
     
     
